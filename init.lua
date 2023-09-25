@@ -2,6 +2,22 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("defaults_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  group = augroup "save_folds",
+  pattern = "*.*",
+  callback = function()
+    vim.cmd "mkview"
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = augroup "restore_folds",
+  pattern = "*.*",
+  callback = function()
+    vim.cmd "silent! loadview"
+  end,
+})
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup "highlight_yank",

@@ -72,12 +72,51 @@ M.lazy = {
 }
 
 M.lspconfig = {
+  plugin = true,
+
   n = {
     ["gl"] = {
       function()
         vim.diagnostic.open_float { border = "rounded" }
       end,
       "Floating diagnostic",
+    },
+  },
+}
+
+M.trouble = {
+  n = {
+    ["gr"] = {
+      function()
+        require("trouble").open "lsp_references"
+      end,
+      "Goto references",
+    },
+    ["ge"] = {
+      function()
+        require("trouble").open "document_diagnostics"
+      end,
+      "File Diagnostics",
+    },
+    ["gt"] = { "<cmd> TodoTrouble <cr>", "Todo Trouble" },
+  },
+}
+
+M.ufo = {
+  plugin = true,
+
+  n = {
+    ["zR"] = {
+      function()
+        require("ufo").openAllFolds()
+      end,
+      "Open all folds",
+    },
+    ["zM"] = {
+      function()
+        require("ufo").closeAllFolds()
+      end,
+      "Close all folds",
     },
   },
 }
@@ -99,6 +138,8 @@ M.disabled = {
     ["<leader>f"] = false, -- Floating diagnostic
     ["<leader>wK"] = false, -- WhickKey
     ["<leader>wk"] = false, -- WhichKey
+    ["gr"] = false, -- Use trouble instead
+    ["ge"] = false, -- Go to end
   },
   i = {
     ["<Tab>"] = false, -- Next buffer

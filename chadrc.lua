@@ -16,6 +16,7 @@ M.ui = {
   extended_integrations = {
     "navic",
     "rainbowdelimiters",
+    "trouble",
   }, -- NOTE: check what is already enabled
 
   statusline = {
@@ -24,6 +25,12 @@ M.ui = {
 
   tabufline = {
     enabled = true,
+  },
+
+  lsp = {
+    signature = {
+      disabled = true,
+    },
   },
 }
 
