@@ -20,7 +20,7 @@ local spec = {
       "sindrets/diffview.nvim",
       config = true,
     },
-  }
+  },
 }
 
 return spec

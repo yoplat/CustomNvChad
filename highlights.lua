@@ -9,11 +9,18 @@ M.override = {
   Comment = {
     italic = true,
   },
+  CursorLine = {
+    bg = "lightbg",
+  },
+  -- WinBar = {
+  --   cterm = "none",
+  --   gui = "none",
+  -- },
 }
 
+vim.cmd "hi WinBar cterm=none gui=none"
+
 ---@type HLTable
-M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
-}
+M.add = {}
 
 return M

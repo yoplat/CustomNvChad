@@ -1,14 +1,40 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "L3MON4D3/LuaSnip",
+      {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+          require "custom.configs.copilot"
+        end,
+      },
+    },
+    config = function(_, opts)
+      require "custom.configs.cmp"(opts)
+    end,
+  },
 
   {
     "neovim/nvim-lspconfig",
+    event = { "BufRead" },
+    config = function() end, -- Override to make sure load order is correct
     dependencies = {
-      -- format & linting
+      {
+        "williamboman/mason.nvim",
+        config = function(plugin, opts)
+          local setup = require "custom.configs.lspconfig"
+          setup.setup(plugin, opts)
+          setup.setup_opts()
+        end,
+      },
+      "williamboman/mason-lspconfig",
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
@@ -16,16 +42,12 @@ local plugins = {
         end,
       },
     },
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
   },
 
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -39,19 +61,39 @@ local plugins = {
   },
 
   {
-		"nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
 
-  -- To use a extras plugin
-  -- { import = "custom.configs.extras.symbols-outline", },
+  {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
+  },
+
+  {
+    "RRethy/vim-illuminate",
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = "nvim-treesitter",
+    config = function()
+      local opts = require "custom.configs.illuminate"
+      require("illuminate").configure(opts)
+    end,
+  },
+
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "BufReadPre",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      dofile(vim.g.base46_cache .. "rainbowdelimiters")
+    end,
+  },
+
+  {
+    "Bekaboo/dropbar.nvim", -- TODO: check against navic
+    event = "BufReadPre",
+    opts = require "custom.configs.dropbar",
+  },
 }
 
 return plugins
