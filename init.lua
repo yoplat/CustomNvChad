@@ -1,7 +1,27 @@
+local wo = vim.wo -- window options
+local o = vim.o
+
 local function augroup(name)
   return vim.api.nvim_create_augroup("defaults_" .. name, { clear = true })
 end
 
+-- Show relative numbers in the active window, and absolute in others
+vim.api.nvim_create_autocmd({ "WinLeave" }, {
+  pattern = { "^[term://*]" },
+  callback = function()
+    wo.relativenumber = false
+    wo.number = true
+  end,
+})
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+  pattern = { "^[term://*]" },
+  callback = function()
+    wo.relativenumber = true
+    wo.number = true
+  end,
+})
+
+-- Save and restore folds
 vim.api.nvim_create_autocmd("BufWinLeave", {
   group = augroup "save_folds",
   pattern = "*.*",
@@ -9,7 +29,6 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
     vim.cmd "mkview"
   end,
 })
-
 vim.api.nvim_create_autocmd("BufWinEnter", {
   group = augroup "restore_folds",
   pattern = "*.*",

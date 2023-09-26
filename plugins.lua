@@ -118,10 +118,6 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
-  {
-    "NvChad/nvterm",
-    opts = overrides.nvterm,
-  },
 
   -- Better folds
   {

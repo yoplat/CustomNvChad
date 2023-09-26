@@ -23,6 +23,8 @@ require("statuscol").setup {
     "noice",
     "lazy",
     "toggleterm",
+    "terminal",
+    "plain text",
   },
   segments = {
     -- Segment: Add padding

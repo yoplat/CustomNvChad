@@ -10,7 +10,7 @@ M.general = {
 
   t = {
     ["<C-h>"] = { "<C-\\><C-N><C-w>h", "Window Left" },
-    ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Window Right" },
+    -- ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Window Right" }, -- Not enabled to clear the screen
     ["<C-j>"] = { "<C-\\><C-N><C-w>j", "Window Down" },
     ["<C-k>"] = { "<C-\\><C-N><C-w>k", "Window Up" },
   },
@@ -119,6 +119,12 @@ M.ufo = {
       end,
       "Close all folds",
     },
+  },
+}
+
+M.terminal = {
+  t = {
+    ["<C-d>"] = { "<C-\\><C-n><cmd>bd!<CR>", "Close terminal" },
   },
 }
 
