@@ -168,7 +168,7 @@ local plugins = {
   -- Navic like winbar
   {
     "Bekaboo/dropbar.nvim",
-    enabled = false,
+    -- enabled = false,
     event = "BufReadPre",
     opts = require "custom.configs.dropbar",
   },

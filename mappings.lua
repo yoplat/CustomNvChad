@@ -5,6 +5,7 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>q"] = { "<cmd> qa <cr>", "Quit all" },
+    ["<Esc>"] = { "<cmd>noh <CR>", "Clear highlights" },
   },
 
   t = {
