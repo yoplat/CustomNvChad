@@ -12,6 +12,10 @@ M.override = {
   CursorLine = {
     bg = "lightbg",
   },
+  FoldColumn = {
+    bg = "NONE",
+    fg = "sun",
+  },
 }
 
 vim.cmd "hi WinBar cterm=none gui=none"

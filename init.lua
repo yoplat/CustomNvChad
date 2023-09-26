@@ -1,23 +1,15 @@
 local wo = vim.wo -- window options
-local o = vim.o
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("defaults_" .. name, { clear = true })
 end
 
--- Show relative numbers in the active window, and absolute in others
-vim.api.nvim_create_autocmd({ "WinLeave" }, {
-  pattern = { "^[term://*]" },
+-- Activate fold column of bufenter
+vim.api.nvim_create_autocmd("BufReadPre", {
+  group = augroup "fold_column",
+  pattern = { "*" },
   callback = function()
-    wo.relativenumber = false
-    wo.number = true
-  end,
-})
-vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
-  pattern = { "^[term://*]" },
-  callback = function()
-    wo.relativenumber = true
-    wo.number = true
+    vim.cmd [[set foldcolumn=1]]
   end,
 })
 
@@ -101,5 +93,14 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+  end,
+})
+
+-- Terminal
+vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter", "BufEnter" }, {
+  pattern = { "term://*" },
+  callback = function()
+    wo.signcolumn = "no"
+    wo.foldcolumn = "0"
   end,
 })

@@ -24,15 +24,8 @@ require("statuscol").setup {
     "lazy",
     "toggleterm",
     "terminal",
-    "plain text",
   },
   segments = {
-    -- Segment: Fold Column
-    { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-    -- Segment: Add padding
-    {
-      text = { " " },
-    },
     -- Segment : Show signs with one character width
     {
       sign = {
@@ -47,12 +40,6 @@ require("statuscol").setup {
     {
       text = { " ", " ", builtin.lnumfunc, " " },
       click = "v:lua.ScLa",
-      condition = { true, builtin.not_empty },
-    },
-    -- Segment: Add padding
-    {
-      text = { " " },
-      hl = "Normal",
       condition = { true, builtin.not_empty },
     },
   },
