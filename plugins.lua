@@ -51,7 +51,7 @@ local plugins = {
   {
     "folke/trouble.nvim",
     cmd = { "Trouble", "TroubleToggle" },
-    dependenckes = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       dofile(vim.g.base46_cache .. "trouble")
       local opts = require "custom.configs.trouble"
@@ -86,8 +86,9 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       {
         "rcarriga/nvim-notify",
-        opts = function()
-          return require("custom.configs.noice").notify
+        config = function()
+          dofile(vim.g.base46_cache .. "notify")
+          require("notify").setup(require("custom.configs.noice").notify)
         end,
       },
     },
@@ -97,6 +98,10 @@ local plugins = {
   },
 
   -- override plugin configs
+  {
+    "NvChad/ui",
+    pin = true,
+  },
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
@@ -124,6 +129,12 @@ local plugins = {
     event = "BufRead",
     dependencies = {
       "kevinhwang91/promise-async",
+      {
+        "luukvbaal/statuscol.nvim",
+        config = function()
+          require "custom.configs.statuscol"
+        end,
+      },
     },
     opts = {
       close_fold_kinds = { "imports" },
@@ -157,6 +168,7 @@ local plugins = {
   -- Navic like winbar
   {
     "Bekaboo/dropbar.nvim",
+    enabled = false,
     event = "BufReadPre",
     opts = require "custom.configs.dropbar",
   },

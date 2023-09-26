@@ -12,7 +12,7 @@ opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs
-opt.foldcolumn = "0"
+opt.foldcolumn = "1"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -41,7 +41,7 @@ opt.shortmess:append {
 }
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 0 -- Columns of context
-opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+opt.signcolumn = "no" -- Always show the signcolumn, otherwise it would shift the text each time
 opt.splitkeep = "screen"
 opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically

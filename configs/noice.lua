@@ -26,11 +26,11 @@ M.noice = {
       ["cmp.entry.get_documentation"] = true,
     },
     hover = {
-      enabled = false, -- TODO: reenable this
+      enabled = true, -- TODO: reenable this
       silent = true, -- set to true to not show a message if hover is not available
     },
     signature = {
-      enabled = false, -- TODO: reenable this
+      enabled = true, -- TODO: reenable this
     },
   },
   routes = {

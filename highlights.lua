@@ -12,10 +12,6 @@ M.override = {
   CursorLine = {
     bg = "lightbg",
   },
-  -- WinBar = {
-  --   cterm = "none",
-  --   gui = "none",
-  -- },
 }
 
 vim.cmd "hi WinBar cterm=none gui=none"

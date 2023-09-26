@@ -17,6 +17,7 @@ M.ui = {
     "navic",
     "rainbowdelimiters",
     "trouble",
+    "notify",
   }, -- NOTE: check what is already enabled
 
   statusline = {
