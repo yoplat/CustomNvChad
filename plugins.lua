@@ -98,26 +98,33 @@ local plugins = {
   },
 
   -- override plugin configs
+  -- Ui
   {
     "NvChad/ui",
     pin = true,
   },
+  -- Nvterm
   {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
+  -- Mason
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
+  -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    keys = { ";", ":" },
     opts = overrides.treesitter,
   },
+  -- Nvimtree
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
+  -- Telescope
   {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
