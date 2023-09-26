@@ -99,10 +99,10 @@ local plugins = {
 
   -- override plugin configs
   -- Ui
-  {
-    "NvChad/ui",
-    pin = true,
-  },
+  -- {
+  --   "NvChad/ui",
+  --   pin = true,
+  -- },
   -- Nvterm
   {
     "NvChad/nvterm",
