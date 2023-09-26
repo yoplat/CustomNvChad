@@ -27,10 +27,6 @@ require("statuscol").setup {
     "plain text",
   },
   segments = {
-    -- Segment: Add padding
-    {
-      text = { " " },
-    },
     -- Segment: Fold Column
     { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
     -- Segment: Add padding

@@ -103,6 +103,10 @@ local plugins = {
     pin = true,
   },
   {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
+  },
+  {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },

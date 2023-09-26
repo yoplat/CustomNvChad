@@ -122,9 +122,15 @@ M.ufo = {
   },
 }
 
-M.terminal = {
+M.nvterm = {
   t = {
-    ["<C-d>"] = { "<C-\\><C-n><cmd>bd!<CR>", "Close terminal" },
+    ["<ESC>"] = {
+      function()
+        local win = vim.api.nvim_get_current_win()
+        vim.api.nvim_win_close(win, true)
+      end,
+      "Close term in terminal mode",
+    },
   },
 }
 
