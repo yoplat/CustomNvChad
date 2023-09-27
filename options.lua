@@ -42,7 +42,6 @@ opt.shortmess:append {
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 0 -- Columns of context
 opt.signcolumn = "no" -- Always show the signcolumn, otherwise it would shift the text each time
-opt.statuscolumn = "" -- No statuscolumn since we have statuscol.nvim
 opt.splitkeep = "screen"
 opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically

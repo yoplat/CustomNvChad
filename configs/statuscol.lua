@@ -1,7 +1,6 @@
 local builtin = require "statuscol.builtin"
 
 require("statuscol").setup {
-
   relculright = true,
   bt_ignore = { "nofile", "prompt", "terminal", "packer" },
   ft_ignore = {
@@ -26,19 +25,30 @@ require("statuscol").setup {
     "terminal",
   },
   segments = {
+    -- -- Only diasgnostics
+    -- {
+    --   sign = { name = { "Diagnostic" }, maxwidth = 1, auto = true },
+    --   click = "v:lua.ScSa",
+    -- },
+    -- { text = { " ", " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+    -- -- Everything OTHER than diagnostics
+    -- {
+    --   sign = { name = { ".*" }, maxwidth = 2, colwidth = 1, auto = true, wrap = true },
+    --   click = "v:lua.ScSa",
+    -- },
     -- Segment : Show signs with one character width
     {
       sign = {
         name = { ".*" },
         maxwidth = 1,
         colwidth = 1,
+        auto = true,
       },
-      auto = true,
       click = "v:lua.ScSa",
     },
     -- Segment: Show line number
     {
-      text = { " ", builtin.lnumfunc, " " },
+      text = { " ", " ", builtin.lnumfunc, " " },
       click = "v:lua.ScLa",
       condition = { true, builtin.not_empty },
     },
