@@ -16,6 +16,21 @@ M.override = {
     bg = "NONE",
     fg = "sun",
   },
+  PmenuSbar = {
+    bg = "NONE",
+    fg = "NONE",
+  },
+  PmenuThumb = {
+    fg = "NONE",
+    bg = "NONE",
+  },
+  -- Pmenu = {
+  --   bg = "NONE",
+  --   fg = "NONE",
+  -- },
+  NormalFloat = {
+    bg = "NONE",
+  },
 }
 
 vim.cmd "hi WinBar cterm=none gui=none"

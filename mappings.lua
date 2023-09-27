@@ -54,6 +54,7 @@ M.telescope = {
     ["<leader><leader>"] = { "<cmd> Telescope find_files <cr>", "Find Files" },
     ["<leader>fr"] = { "<cmd> Telescope oldfiles <cr>", "Recent Files" },
     ["<leader>fl"] = { "<cmd> Telescope highlights <cr>", "Find Highlights" },
+    ["<leader>fk"] = { "<cmd> Telescope keymaps <cr>", "Find Keymaps" },
   },
 }
 
@@ -118,18 +119,6 @@ M.ufo = {
         require("ufo").closeAllFolds()
       end,
       "Close all folds",
-    },
-  },
-}
-
-M.nvterm = {
-  t = {
-    ["<ESC>"] = {
-      function()
-        local win = vim.api.nvim_get_current_win()
-        vim.api.nvim_win_close(win, true)
-      end,
-      "Close term in terminal mode",
     },
   },
 }

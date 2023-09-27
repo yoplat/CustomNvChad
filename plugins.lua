@@ -84,6 +84,7 @@ local plugins = {
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
+      "nvim-treesitter/nvim-treesitter",
       {
         "rcarriga/nvim-notify",
         config = function()
@@ -98,16 +99,6 @@ local plugins = {
   },
 
   -- override plugin configs
-  -- Ui
-  -- {
-  --   "NvChad/ui",
-  --   pin = true,
-  -- },
-  -- Nvterm
-  {
-    "NvChad/nvterm",
-    opts = overrides.nvterm,
-  },
   -- Mason
   {
     "williamboman/mason.nvim",
@@ -116,7 +107,6 @@ local plugins = {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    keys = { ";", ":" },
     opts = overrides.treesitter,
   },
   -- Nvimtree
@@ -128,6 +118,27 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
+  },
+
+  -- Git
+  {
+    "lewis6991/gitsigns.nvim",
+    dependencies = {
+      {
+        "sindrets/diffview.nvim",
+        config = true,
+      },
+    },
+  },
+  {
+    "NeogitOrg/neogit",
+    cmd = "Neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "sindrets/diffview.nvim",
+    },
+    config = true,
   },
 
   -- Better folds
@@ -193,6 +204,10 @@ local plugins = {
     event = { "BufReadPre" },
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = require "custom.configs.todo",
+    config = function()
+      dofile(vim.g.base46_cache .. "todo")
+      require("todo-comments").setup(require "custom.configs.todo")
+    end,
   },
 }
 

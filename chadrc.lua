@@ -8,7 +8,6 @@ M.ui = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "one_light" },
   transparency = false,
-  lsp_semantic_tokens = false, -- Different syntax highlighting
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -18,6 +17,7 @@ M.ui = {
     "rainbowdelimiters",
     "trouble",
     "notify",
+    "todo",
   }, -- NOTE: check what is already enabled
 
   statusline = {
@@ -29,9 +29,8 @@ M.ui = {
   },
 
   lsp = {
-    signature = {
-      disabled = true,
-    },
+    signature = false,
+    semantic_tokens = false,
   },
 }
 

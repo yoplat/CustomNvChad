@@ -38,7 +38,7 @@ require("statuscol").setup {
     },
     -- Segment: Show line number
     {
-      text = { " ", " ", builtin.lnumfunc, " " },
+      text = { " ", builtin.lnumfunc, " " },
       click = "v:lua.ScLa",
       condition = { true, builtin.not_empty },
     },
