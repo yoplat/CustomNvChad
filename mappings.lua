@@ -123,6 +123,12 @@ M.ufo = {
   },
 }
 
+M.neogit = {
+  n = {
+    ["<leader>gg"] = { "<cmd> Neogit <cr>", "Neogit" },
+  },
+}
+
 M.disabled = {
   n = {
     ["<leader>fo"] = false, -- Telescope oldfiles
@@ -140,6 +146,7 @@ M.disabled = {
     ["<leader>f"] = false, -- Floating diagnostic
     ["<leader>wK"] = false, -- WhickKey
     ["<leader>wk"] = false, -- WhichKey
+    ["<leader>gs"] = false, -- Telescope Git Status
     ["gr"] = false, -- Use trouble instead
     ["ge"] = false, -- Go to end
   },
