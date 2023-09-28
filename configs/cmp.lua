@@ -13,8 +13,11 @@ return function(opts)
     end,
   })
 
+  -- Only show cmp after one char is typed
+  opts.completion.keyword_length = 1
+
   opts.enabled = function()
-    local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+    local buftype = vim.api.nvim_get_option_value("buftype", { scope = "local" })
     if buftype == "prompt" then
       return false
     end

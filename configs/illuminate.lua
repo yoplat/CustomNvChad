@@ -22,5 +22,7 @@ return {
     "toggleterm",
     "DressingSelect",
     "aerial",
+    "help",
+    "Neogit",
   },
 }

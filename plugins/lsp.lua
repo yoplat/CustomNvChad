@@ -1,5 +1,6 @@
 ---@type NvPluginSpec[]
 local plugins = {
+  -- TODO: checkout action-preview.nvim/codeactionmenu
 
   -- Completition framework
   {

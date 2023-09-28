@@ -86,6 +86,7 @@ M.telescope = {
       },
     },
   },
+  extensions_list = { "persisted" },
 }
 
 M.indent = {

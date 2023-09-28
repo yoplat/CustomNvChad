@@ -21,6 +21,7 @@ local plugins = {
       dofile(vim.g.base46_cache .. "rainbowdelimiters")
     end,
   },
+
   -- Don't go over the 80 char
   {
     "Bekaboo/deadcolumn.nvim",
@@ -38,6 +39,20 @@ local plugins = {
       dofile(vim.g.base46_cache .. "todo")
       require("todo-comments").setup(require "custom.configs.todo")
     end,
+  },
+
+  -- Session manager
+  {
+    "olimorris/persisted.nvim",
+    lazy = false,
+    config = true,
+  },
+
+  -- Guess indent for file
+  {
+    "nmac427/guess-indent.nvim",
+    event = "BufReadPre",
+    opts = {},
   },
 }
 
