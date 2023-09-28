@@ -27,7 +27,9 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
-    opts = {},
+    opts = {
+      kind = "replace",
+    },
   },
 }
 
