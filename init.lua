@@ -4,6 +4,14 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("defaults_" .. name, { clear = true })
 end
 
+-- Enable colorcolumn after startup (no welcome screen)
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = augroup "colorcolumn",
+  callback = function()
+    vim.o.colorcolumn = "80"
+  end,
+})
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup "highlight_yank",

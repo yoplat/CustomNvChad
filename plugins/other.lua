@@ -54,6 +54,18 @@ local plugins = {
     event = "BufReadPre",
     opts = {},
   },
+
+  {
+    "nvim-neorg/neorg",
+    ft = "norg",
+    build = ":Neorg sync-parsers",
+    cmd = "Neorg",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = require "custom.configs.neorg",
+  },
 }
 
 return plugins
