@@ -32,6 +32,13 @@ M.ui = {
     signature = false,
     semantic_tokens = false,
   },
+
+  term = {
+    sizes = { sp = 0.35, vsp = 0.4 },
+    behavior = {
+      auto_insert = true,
+    },
+  },
 }
 
 M.plugins = "custom.plugins"

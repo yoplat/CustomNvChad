@@ -88,4 +88,8 @@ M.telescope = {
   },
 }
 
+M.indent = {
+  show_current_context_start = false,
+}
+
 return M
