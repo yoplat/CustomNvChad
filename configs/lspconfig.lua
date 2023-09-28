@@ -6,6 +6,8 @@ M.setup = function(_, opts)
 
   local lspconfig = require "lspconfig"
 
+  require("plugins.configs.lspconfig").defaults()
+
   -- List of servers to install
   local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "bashls" }
 
