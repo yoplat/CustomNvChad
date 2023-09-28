@@ -12,10 +12,6 @@ M.override = {
   CursorLine = {
     bg = "lightbg",
   },
-  FoldColumn = {
-    bg = "NONE",
-    fg = "sun",
-  },
   PmenuSbar = {
     bg = "NONE",
     fg = "NONE",
@@ -24,18 +20,25 @@ M.override = {
     fg = "NONE",
     bg = "NONE",
   },
-  -- Pmenu = {
-  --   bg = "NONE",
-  --   fg = "NONE",
-  -- },
-  NormalFloat = {
-    bg = "NONE",
-  },
 }
 
-vim.cmd "hi WinBar cterm=none gui=none"
+vim.api.nvim_set_hl(0, "NoicePopup", { bg = "NONE" }) -- Cmp popup
+vim.api.nvim_set_hl(0, "WinBar", { cterm = nil }) -- No dropbar bold font
 
 ---@type HLTable
-M.add = {}
+M.add = {
+  AlphaHeader = {
+    fg = "blue",
+  },
+  AlphaButtons = {
+    fg = "blue",
+  },
+  AlphaText = {
+    fg = "teal",
+  },
+  AlphaFooter = {
+    fg = "orange",
+  },
+}
 
 return M

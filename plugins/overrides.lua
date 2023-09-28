@@ -11,6 +11,7 @@ local plugins = {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "CmdLineEnter",
     opts = overrides.treesitter,
   },
   -- Nvimtree

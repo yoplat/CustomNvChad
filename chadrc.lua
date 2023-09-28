@@ -26,6 +26,9 @@ M.ui = {
 
   tabufline = {
     enabled = true,
+    overriden_modules = function(modules)
+      table.remove(modules, #modules) -- remove close button and theme switch
+    end,
   },
 
   lsp = {
@@ -35,9 +38,6 @@ M.ui = {
 
   term = {
     sizes = { sp = 0.35, vsp = 0.4 },
-    behavior = {
-      auto_insert = true,
-    },
   },
 }
 

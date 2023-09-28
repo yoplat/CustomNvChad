@@ -22,11 +22,9 @@ local plugins = {
   },
   {
     "folke/noice.nvim",
-    enabled = true,
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "nvim-treesitter/nvim-treesitter",
       {
         "rcarriga/nvim-notify",
         config = function()
@@ -65,6 +63,14 @@ local plugins = {
     event = "BufRead",
     config = function()
       require "custom.configs.statuscol"
+    end,
+  },
+
+  {
+    "goolord/alpha-nvim",
+    event = "VimEnter",
+    config = function()
+      require "custom.configs.alpha"
     end,
   },
 }

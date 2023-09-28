@@ -91,6 +91,19 @@ M.telescope = {
 
 M.indent = {
   show_current_context_start = false,
+  filetype_exclude = {
+    "help",
+    "terminal",
+    "lazy",
+    "lspinfo",
+    "TelescopePrompt",
+    "TelescopeResults",
+    "mason",
+    "nvdash",
+    "nvcheatsheet",
+    "",
+  },
+  buftype_exclude = { "terminal", "nofile" },
 }
 
 return M
