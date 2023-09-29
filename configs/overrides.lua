@@ -18,31 +18,6 @@ M.treesitter = {
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
-  },
-}
-
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-    "prettier",
-
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
-
-    -- python
-    "pyright",
   },
 }
 
@@ -76,17 +51,14 @@ M.nvimtree = {
 M.telescope = {
   defaults = {
     mappings = {
-      n = {
-        ["q"] = require("telescope.actions").close,
-      },
       i = {
-        ["<esc>"] = require("telescope.actions").close,
-        ["<C-j>"] = require("telescope.actions").move_selection_next,
-        ["<C-k>"] = require("telescope.actions").move_selection_previous,
+        ["<esc>"] = "close",
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
       },
     },
   },
-  extensions_list = { "persisted" },
+  extensions_list = { "persisted", "themes", "terms", "fzf" },
 }
 
 M.indent = {

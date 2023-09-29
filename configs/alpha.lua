@@ -23,13 +23,13 @@ local logo = [[
 
 dashboard.section.header.val = vim.split(logo, "\n")
 dashboard.section.buttons.val = {
-  dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-  dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-  dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
-  dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
-  dashboard.button("s", " " .. " Restore Session", [[:SessionLoadLast <cr>]]),
-  dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
-  dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+  dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <CR>"),
+  dashboard.button("r", " " .. " Recent files", "<cmd> Telescope oldfiles <CR>"),
+  dashboard.button("g", " " .. " Find text", "<cmd> Telescope live_grep <CR>"),
+  dashboard.button("c", " " .. " Config", "<cmd> e $MYVIMRC <CR>"),
+  dashboard.button("s", " " .. " Restore Session", "<cmd> SessionLoadLast <cr>"),
+  dashboard.button("l", "󰒲 " .. " Lazy", "<cmd> Lazy <CR>"),
+  dashboard.button("q", " " .. " Quit", "<cmd> qa <CR>"),
 }
 for _, button in ipairs(dashboard.section.buttons.val) do
   button.opts.hl = "AlphaText"
