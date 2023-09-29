@@ -49,6 +49,7 @@ M.telescope = {
     ["<leader>fl"] = { "<cmd> Telescope highlights <cr>", "Find Highlights" },
     ["<leader>fk"] = { "<cmd> Telescope keymaps <cr>", "Find Keymaps" },
     ["<leader>fs"] = { "<cmd> Telescope persisted <cr>", "Find Session" },
+    ["<leader>ft"] = { "<cmd> Telescope themes <cr>", "Find Themes" },
   },
 }
 
@@ -140,6 +141,8 @@ M.disabled = {
     ["<leader>wK"] = false, -- WhickKey
     ["<leader>wk"] = false, -- WhichKey
     ["<leader>gs"] = false, -- Telescope Git Status
+    ["<leader>td"] = false, -- Gitsigns Toggle Deleted
+    ["<leader>th"] = false, -- Telescope themes
     ["gr"] = false, -- Use trouble instead
     ["ge"] = false, -- Go to end
   },

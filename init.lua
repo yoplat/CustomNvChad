@@ -4,12 +4,24 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("defaults_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
+  group = augroup "add_statusline",
+  callback = function()
+    if vim.bo.filetype == "alpha" then
+      vim.o.laststatus = 0
+    else
+      vim.o.laststatus = 3
+    end
+  end,
+})
+
 -- Enable colorcolumn after startup (no welcome screen)
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = augroup "colorcolumn",
   callback = function()
     vim.o.colorcolumn = "80"
   end,
+  once = true, -- No need to run this every time
 })
 
 -- Highlight on yank
@@ -84,6 +96,5 @@ vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter", "BufEnter" }, {
   pattern = { "term://*" },
   callback = function()
     wo.signcolumn = "no"
-    -- wo.foldcolumn = "0"
   end,
 })

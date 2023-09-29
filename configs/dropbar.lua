@@ -7,6 +7,7 @@ return {
         and not vim.wo[win].diff
         and vim.filetype ~= "terminal"
         and not vim.api.nvim_buf_get_name(buf):find "Neogit"
+        and not vim.api.nvim_buf_get_name(buf):find "Trouble"
     end,
   },
   icons = {

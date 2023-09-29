@@ -2,6 +2,7 @@
 local plugins = {
   -- TODO: checkout action-preview.nvim/codeactionmenu
   -- TODO: checkout lspsaga
+  -- TODO: checkout nvim-dap
 
   -- Completition framework
   {

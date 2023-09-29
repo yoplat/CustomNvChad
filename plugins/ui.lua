@@ -1,5 +1,6 @@
 ---@type NvPluginSpec[]
 local plugins = {
+  -- TODO: checkout hydra.nvim
 
   -- UI
   {

@@ -113,7 +113,12 @@ M.setup_opts = function()
   -- If virtual_text.prefix = "icons" put diagnostic icons
   if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
     opts.diagnostics.virtual_text.prefix = function(diagnostic)
-      local icons = require("custom.defaults").icons.diagnostics
+      local icons = {
+        Error = "󰅙 ",
+        Warn = " ",
+        Hint = "󰌵 ",
+        Info = "󰋼 ",
+      }
       for d, icon in pairs(icons) do
         if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
           return icon
