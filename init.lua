@@ -4,6 +4,14 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("defaults_" .. name, { clear = true })
 end
 
+-- NOTE: Update statusline on LSP progress (until nvchad updates)
+vim.api.nvim_create_autocmd("LspProgress", {
+  callback = function()
+    vim.cmd "redrawstatus"
+  end,
+})
+
+-- Disable statusline on alpha buffer
 vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
   group = augroup "add_statusline",
   callback = function()

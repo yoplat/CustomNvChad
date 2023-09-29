@@ -22,6 +22,7 @@ M.ui = {
 
   statusline = {
     theme = "vscode_colored",
+    overriden_modules = require "custom.statusline",
   },
 
   tabufline = {

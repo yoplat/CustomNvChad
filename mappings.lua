@@ -78,19 +78,10 @@ M.lspconfig = {
 
 M.trouble = {
   n = {
-    ["gr"] = {
-      function()
-        require("trouble").open "lsp_references"
-      end,
-      "Goto references",
-    },
-    ["ge"] = {
-      function()
-        require("trouble").open "document_diagnostics"
-      end,
-      "File Diagnostics",
-    },
+    ["gr"] = { "<cmd> TroubleToggle lsp_references <cr>", "Goto References" },
+    ["ge"] = { "<cmd> TroubleToggle document_diagnostics <cr>", "File Diagnostics" },
     ["gt"] = { "<cmd> TodoTrouble <cr>", "Todo Trouble" },
+    ["gd"] = { "<cmd> TroubleToggle lsp_definitions <cr>", "LSP Definition" },
   },
 }
 
