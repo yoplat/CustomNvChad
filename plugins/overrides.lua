@@ -19,6 +19,14 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
+  -- Gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      -- TODO: check when statuscolumn has updated to use extsigns
+      _extmark_signs = false,
+    },
+  },
 }
 
 return plugins

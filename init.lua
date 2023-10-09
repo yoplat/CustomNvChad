@@ -12,16 +12,16 @@ vim.api.nvim_create_autocmd("LspProgress", {
 })
 
 -- Disable statusline on alpha buffer
-vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
-  group = augroup "add_statusline",
-  callback = function()
-    if vim.bo.filetype == "alpha" then
-      vim.o.laststatus = 0
-    else
-      vim.o.laststatus = 3
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
+--   group = augroup "add_statusline",
+--   callback = function()
+--     if vim.bo.filetype == "dashboard" then
+--       vim.o.laststatus = 0
+--     else
+--       vim.o.laststatus = 3
+--     end
+--   end,
+-- })
 
 -- Enable colorcolumn after startup (no welcome screen)
 vim.api.nvim_create_autocmd("BufReadPost", {

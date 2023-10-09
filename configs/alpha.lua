@@ -25,9 +25,10 @@ dashboard.section.header.val = vim.split(logo, "\n")
 dashboard.section.buttons.val = {
   dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <CR>"),
   dashboard.button("r", " " .. " Recent files", "<cmd> Telescope oldfiles <CR>"),
-  dashboard.button("g", " " .. " Find text", "<cmd> Telescope live_grep <CR>"),
+  dashboard.button("w", " " .. " Find text", "<cmd> Telescope live_grep <CR>"),
   dashboard.button("c", " " .. " Config", "<cmd> e $MYVIMRC <CR>"),
-  dashboard.button("s", " " .. " Restore Session", "<cmd> SessionLoadLast <cr>"),
+  dashboard.button("s", " " .. " Restore Session", [[<cmd>lua require("persistence").load({ last = true })<cr>]]),
+  dashboard.button("g", " " .. " Git status", "<cmd> Neogit <cr>"),
   dashboard.button("l", "󰒲 " .. " Lazy", "<cmd> Lazy <CR>"),
   dashboard.button("q", " " .. " Quit", "<cmd> qa <CR>"),
 }
@@ -38,7 +39,7 @@ end
 dashboard.section.header.opts.hl = "AlphaHeader"
 dashboard.section.buttons.opts.hl = "AlphaButtons"
 dashboard.section.footer.opts.hl = "AlphaFooter"
-dashboard.opts.layout[1].val = 6
+dashboard.opts.layout[1].val = 5
 
 require("alpha").setup(dashboard.opts)
 

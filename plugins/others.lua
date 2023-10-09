@@ -47,11 +47,10 @@ local plugins = {
 
   -- Session manager
   {
-    "olimorris/persisted.nvim",
-    lazy = false,
+    "folke/persistence.nvim",
+    event = "BufReadPre",
     config = true,
   },
-
   -- Guess indent for file
   {
     "nmac427/guess-indent.nvim",

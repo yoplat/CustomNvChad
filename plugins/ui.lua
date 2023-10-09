@@ -58,7 +58,6 @@ local plugins = {
     end,
   },
 
-  -- Better statuscolumn
   {
     "luukvbaal/statuscol.nvim",
     event = "BufRead",

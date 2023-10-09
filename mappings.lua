@@ -108,9 +108,9 @@ M.neogit = {
   },
 }
 
-M.persisted = {
+M.persistence = {
   n = {
-    ["<leader>qr"] = { "<cmd> SessionLoadLast <cr>", "Load Last Session" },
+    ["<leader>qr"] = { [[<cmd>lua require("persistence").load({ last = true })<cr>]], "Load Last Session" },
   },
 }
 

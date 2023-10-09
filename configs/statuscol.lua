@@ -25,18 +25,8 @@ require("statuscol").setup {
     "terminal",
   },
   segments = {
-    -- -- Only diasgnostics
-    -- {
-    --   sign = { name = { "Diagnostic" }, maxwidth = 1, auto = true },
-    --   click = "v:lua.ScSa",
-    -- },
-    -- { text = { " ", " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-    -- -- Everything OTHER than diagnostics
-    -- {
-    --   sign = { name = { ".*" }, maxwidth = 2, colwidth = 1, auto = true, wrap = true },
-    --   click = "v:lua.ScSa",
-    -- },
-    -- Segment : Show signs with one character width
+    -- TODO: check when statuscolumn has updated to use extsigns
+    -- Show sign column
     {
       sign = {
         name = { ".*" },
