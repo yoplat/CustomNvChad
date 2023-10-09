@@ -8,6 +8,8 @@ return {
         and vim.filetype ~= "terminal"
         and not vim.api.nvim_buf_get_name(buf):find "Neogit"
         and not vim.api.nvim_buf_get_name(buf):find "Trouble"
+        and not vim.api.nvim_buf_get_name(buf):find "undotree"
+        and not vim.api.nvim_buf_get_name(buf):find "diffpanel"
     end,
   },
   icons = {

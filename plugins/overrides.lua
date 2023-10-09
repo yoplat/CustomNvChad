@@ -19,11 +19,6 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
-  -- Indent blankline
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = overrides.indent,
-  },
 }
 
 return plugins

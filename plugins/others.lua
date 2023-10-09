@@ -33,7 +33,7 @@ local plugins = {
     opts = {},
   },
 
-  -- TODO: comments
+  -- TODO comments
   {
     "folke/todo-comments.nvim",
     event = { "BufReadPre" },
@@ -67,9 +67,14 @@ local plugins = {
     end,
   },
 
+  -- Undotree
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+  },
+
   {
     "nvim-neorg/neorg",
-    ft = "norg",
     build = ":Neorg sync-parsers",
     cmd = "Neorg",
     dependencies = {

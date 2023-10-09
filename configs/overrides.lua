@@ -61,24 +61,4 @@ M.telescope = {
   extensions_list = { "persisted", "themes", "terms", "fzf" },
 }
 
-M.indent = {
-  indent = {
-    char = "│",
-  },
-  exclude = {
-    filetypes = {
-      "help",
-      "alpha",
-      "dashboard",
-      "NvimTree",
-      "Trouble",
-      "lazy",
-      "mason",
-      "notify",
-      "toggleterm",
-      "lazyterm",
-    },
-  },
-}
-
 return M
