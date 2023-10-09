@@ -73,10 +73,8 @@ local plugins = {
   },
 
   {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {}
-    end,
+    "jvgrootveld/telescope-zoxide",
+    config = true,
   },
 
   {

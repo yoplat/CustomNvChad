@@ -104,5 +104,6 @@ vim.api.nvim_create_autocmd({ "TermOpen", "TermEnter", "BufEnter" }, {
   pattern = { "term://*" },
   callback = function()
     wo.signcolumn = "no"
+    wo.cursorline = false
   end,
 })

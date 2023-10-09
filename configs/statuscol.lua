@@ -30,9 +30,10 @@ require("statuscol").setup {
     {
       sign = {
         name = { ".*" },
+        namespace = { "gitsigns" },
         maxwidth = 1,
         colwidth = 1,
-        auto = true,
+        auto = false,
       },
       click = "v:lua.ScSa",
     },

@@ -74,7 +74,7 @@ dashboard.section.buttons.val = {
   dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <CR>"),
   dashboard.button("r", " " .. " Recent files", "<cmd> Telescope oldfiles <CR>"),
   dashboard.button("w", " " .. " Find text", "<cmd> Telescope live_grep <CR>"),
-  dashboard.button("c", " " .. " Config", "<cmd> cd ~/.config/nvim <CR>"),
+  dashboard.button("c", " " .. " Config", "<cmd> cd ~/.config/nvim/lua/custom <CR>"),
   dashboard.button("s", " " .. " Restore Session", [[<cmd>lua require("persistence").load({ last = true })<cr>]]),
   dashboard.button("g", " " .. " Git status", "<cmd> Neogit <cr>"),
   dashboard.button("l", "󰒲 " .. " Lazy", "<cmd> Lazy <CR>"),

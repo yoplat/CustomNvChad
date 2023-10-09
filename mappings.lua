@@ -48,8 +48,9 @@ M.telescope = {
     ["<leader>fr"] = { "<cmd> Telescope oldfiles <cr>", "Recent Files" },
     ["<leader>fl"] = { "<cmd> Telescope highlights <cr>", "Find Highlights" },
     ["<leader>fk"] = { "<cmd> Telescope keymaps <cr>", "Find Keymaps" },
-    ["<leader>fs"] = { "<cmd> Telescope persisted <cr>", "Find Session" },
+    ["<leader>fs"] = { "<cmd> Telescope persisted <cr>", "Find Sessions" },
     ["<leader>ft"] = { "<cmd> Telescope themes <cr>", "Find Themes" },
+    ["<leader>fp"] = { "<cmd> Telescope zoxide list <cr>", "Find Projects" },
   },
 }
 
