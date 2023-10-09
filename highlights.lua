@@ -27,9 +27,6 @@ vim.api.nvim_set_hl(0, "WinBar", { cterm = nil }) -- No dropbar bold font
 
 ---@type HLTable
 M.add = {
-  AlphaHeader = {
-    fg = "blue",
-  },
   AlphaButtons = {
     fg = "blue",
   },

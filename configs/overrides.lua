@@ -58,6 +58,7 @@ M.telescope = {
       },
     },
   },
+  extensions_list = { "projects", "themes", "terms", "fzf" },
 }
 
 return M

@@ -73,6 +73,13 @@ local plugins = {
   },
 
   {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {}
+    end,
+  },
+
+  {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     cmd = "Neorg",
