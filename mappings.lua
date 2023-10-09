@@ -114,6 +114,12 @@ M.persisted = {
   },
 }
 
+M.undotree = {
+  n = {
+    ["<leader>u"] = { "<cmd> UndotreeToggle <cr>", "Undo Tree" },
+  },
+}
+
 M.disabled = {
   n = {
     ["<leader>fo"] = false, -- Telescope oldfiles
