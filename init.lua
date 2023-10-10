@@ -11,6 +11,22 @@ vim.api.nvim_create_autocmd("LspProgress", {
   end,
 })
 
+-- Save and restore folds
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  group = augroup "save_folds",
+  pattern = "*.*",
+  callback = function()
+    vim.cmd "mkview"
+  end,
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = augroup "restore_folds",
+  pattern = "*.*",
+  callback = function()
+    vim.cmd "silent! loadview"
+  end,
+})
+
 -- Disable statusline on alpha buffer
 vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
   group = augroup "add_statusline",

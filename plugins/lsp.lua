@@ -44,7 +44,7 @@ local plugins = {
   -- formatting
   {
     "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufWrite" },
     opts = require "custom.configs.conform",
   },
 }

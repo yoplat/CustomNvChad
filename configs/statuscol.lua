@@ -1,5 +1,14 @@
 local builtin = require "statuscol.builtin"
 
+vim.opt.fillchars = {
+  fold = " ",
+  foldopen = " ",
+  foldsep = " ",
+  foldclose = "",
+  stl = " ",
+  eob = " ",
+}
+
 require("statuscol").setup {
   relculright = true,
   bt_ignore = { "nofile", "prompt", "terminal", "packer" },
@@ -39,9 +48,10 @@ require("statuscol").setup {
     },
     -- Segment: Show line number
     {
-      text = { " ", " ", builtin.lnumfunc, " " },
+      text = { " ", " ", builtin.lnumfunc },
       click = "v:lua.ScLa",
-      condition = { true, builtin.not_empty },
+      condition = { true, true, builtin.not_empty },
     },
+    { text = { " " } },
   },
 }

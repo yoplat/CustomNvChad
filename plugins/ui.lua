@@ -67,6 +67,13 @@ local plugins = {
   },
 
   {
+    "kevinhwang91/nvim-ufo",
+    keys = { "za", "zA", "zR" },
+    dependencies = "kevinhwang91/promise-async",
+    opts = require "custom.configs.ufo",
+  },
+
+  {
     "goolord/alpha-nvim",
     event = "VimEnter",
     config = function()

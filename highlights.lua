@@ -20,6 +20,9 @@ M.override = {
     fg = "NONE",
     bg = "NONE",
   },
+  FoldColumn = {
+    bg = "NONE",
+  },
 }
 
 vim.api.nvim_set_hl(0, "NoicePopup", { bg = "NONE" }) -- Cmp popup
