@@ -121,6 +121,23 @@ M.undotree = {
   },
 }
 
+M.ufo = {
+  n = {
+    ["zR"] = {
+      function()
+        require("ufo").openAllFolds()
+      end,
+      "Open All Folds",
+    },
+    ["zM"] = {
+      function()
+        require("ufo").closeAllFolds()
+      end,
+      "Open All Folds",
+    },
+  },
+}
+
 M.disabled = {
   n = {
     ["<leader>fo"] = false, -- Telescope oldfiles
