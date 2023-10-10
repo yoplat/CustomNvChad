@@ -29,14 +29,13 @@ M.setup = function(_, opts)
           -- Add your other things here
           -- Example being format on save or something
         end,
-        -- capabilities = function()
-        --   capabilities.textDocument.foldingRange = {
-        --     dynamicRegistration = false,
-        --     lineFoldingOnly = true,
-        --   }
-        --   return capabilities
-        -- end,
-        capabilities = capabilities,
+        capabilities = function()
+          capabilities.textDocument.foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+          }
+          return capabilities
+        end,
       }
     end,
     -- custom setup for a server goes after the function above

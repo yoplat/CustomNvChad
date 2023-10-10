@@ -25,7 +25,6 @@ M.override = {
   },
 }
 
-vim.api.nvim_set_hl(0, "NoicePopup", { bg = "NONE" }) -- Cmp popup
 vim.api.nvim_set_hl(0, "WinBar", { cterm = nil }) -- No dropbar bold font
 
 ---@type HLTable

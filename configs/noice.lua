@@ -7,8 +7,6 @@ M.notify = {
 
 M.noice = {
   presets = {
-    bottom_search = false, -- use a classic bottom cmdline for search
-    command_palette = true, -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
     inc_rename = false, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = true, -- add a border to hover docs and signature help
@@ -31,6 +29,40 @@ M.noice = {
     },
     signature = {
       enabled = true,
+    },
+  },
+  views = {
+    hover = {
+      scrollbar = false,
+      win_options = {
+        winhighlight = { Normal = "Normal" },
+      },
+    },
+    cmdline_popup = {
+      position = {
+        row = 24,
+        col = "50%",
+      },
+    },
+    cmdline_popupmenu = {
+      scrollbar = false, -- TODO: check when available
+      relative = "editor",
+      position = {
+        row = 27,
+        col = "50%",
+      },
+      size = {
+        width = 60,
+        height = "auto",
+        max_height = 15,
+      },
+      border = {
+        style = "rounded",
+        padding = { 0, 1 },
+      },
+      win_options = {
+        winhighlight = { Normal = "Normal", FloatBorder = "NoiceCmdlinePopupBorder" },
+      },
     },
   },
   routes = {
