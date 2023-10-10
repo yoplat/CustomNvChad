@@ -133,7 +133,28 @@ M.ufo = {
       function()
         require("ufo").closeAllFolds()
       end,
-      "Open All Folds",
+      "Close All Folds",
+    },
+    ["zr"] = {
+      function()
+        require("ufo").openFoldsExceptKinds()
+      end,
+      "Fold Less",
+    },
+    ["zm"] = {
+      function()
+        require("ufo").closeFoldsWith()
+      end,
+      "Fold More",
+    },
+    ["K"] = {
+      function()
+        local winid = require("ufo").peekFoldedLinesUnderCursor()
+        if not winid then
+          vim.lsp.buf.hover()
+        end
+      end,
+      "Peek Fold",
     },
   },
 }

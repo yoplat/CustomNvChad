@@ -68,7 +68,7 @@ local plugins = {
 
   {
     "kevinhwang91/nvim-ufo",
-    keys = { "za", "zA", "zR" },
+    keys = { "za", "zA", "zR", "zM", "zr", "zm" },
     dependencies = "kevinhwang91/promise-async",
     opts = require "custom.configs.ufo",
   },

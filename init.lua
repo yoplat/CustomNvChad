@@ -12,14 +12,14 @@ vim.api.nvim_create_autocmd("LspProgress", {
 })
 
 -- Save and restore folds
-vim.api.nvim_create_autocmd("BufWinLeave", {
+vim.api.nvim_create_autocmd("BufLeave", {
   group = augroup "save_folds",
   pattern = "*.*",
   callback = function()
     vim.cmd "mkview"
   end,
 })
-vim.api.nvim_create_autocmd("BufWinEnter", {
+vim.api.nvim_create_autocmd("BufEnter", {
   group = augroup "restore_folds",
   pattern = "*.*",
   callback = function()
