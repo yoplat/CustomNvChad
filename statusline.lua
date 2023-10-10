@@ -25,7 +25,7 @@ local override = function(modules)
   modules[6] = (function() -- LSP progress messages
     local status = get_message()
 
-    if not rawget(vim, "lsp") or vim.o.columns < 120 or not status then
+    if vim.o.columns < 120 or not status then
       return ""
     end
 
@@ -51,19 +51,15 @@ local override = function(modules)
   end)()
 
   modules[11] = (function() -- LSP servers
-    if rawget(vim, "lsp") then
-      local lsp_status = ""
-      for _, client in ipairs(vim.lsp.get_clients()) do
-        if client.attached_buffers[vim.api.nvim_get_current_buf()] then
-          lsp_status = lsp_status .. client.name .. " "
-        end
+    local lsp_status = ""
+    for _, client in ipairs(vim.lsp.get_clients()) do
+      if client.attached_buffers[vim.api.nvim_get_current_buf()] then
+        lsp_status = lsp_status .. client.name .. " "
       end
-      return #lsp_status > 0
-          and ((vim.o.columns > 100 and "%#St_LspStatus# 󰄭  [" .. lsp_status:sub(0, #lsp_status - 1) .. "] ") or "%#St_LspStatus# 󰄭  LSP  ")
-        or ""
     end
-
-    return ""
+    return #lsp_status > 0
+        and ((vim.o.columns > 100 and "%#St_LspStatus# 󰄭  [" .. lsp_status:sub(0, #lsp_status - 1) .. "] ") or "%#St_LspStatus# 󰄭  LSP  ")
+      or ""
   end)()
 end
 
