@@ -29,16 +29,16 @@ vim.api.nvim_set_hl(0, "WinBar", { cterm = nil }) -- No dropbar bold font
 
 M.add = {
   SimpleDashAscii = {
-    fg = "#89b4fa",
-    bg = "NONE",
+    fg = "#1e1d2d",
+    bg = "#89b4fa",
   },
   SimpleDashButtons = {
     fg = "#d9e0ee",
-    bg = "NONE",
+    bg = "#252434",
   },
   SimpleDashFooter = {
     fg = "#89b4fa",
-    bg = "NONE",
+    bg = "#252434",
   },
 }
 
