@@ -2,7 +2,7 @@
 local plugins = {
   -- TODO: checkout hydra.nvim
 
-  -- UI
+  -- Dressing: better input and select
   {
     "stevearc/dressing.nvim", -- TODO: check if needs to be loaded earlier
     opts = function()
@@ -21,6 +21,7 @@ local plugins = {
       end
     end,
   },
+  -- Noice: better ui
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -39,7 +40,7 @@ local plugins = {
     end,
   },
 
-  -- Navic like winbar
+  -- Dropbar: navic like winbar
   {
     "Bekaboo/dropbar.nvim",
     event = "BufReadPre",
@@ -58,6 +59,7 @@ local plugins = {
     end,
   },
 
+  -- Statuscol: better statuscolumn
   {
     "luukvbaal/statuscol.nvim",
     event = "BufRead",
@@ -66,10 +68,25 @@ local plugins = {
     end,
   },
 
+  -- SimpleDash: fast dashboard
   {
     dir = "~/SourcesGithub/SimpleDash",
     event = "VimEnter",
     opts = require "custom.configs.simpledash",
+  },
+
+  -- Ufo: better folds
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "BufRead",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      {
+        "chrisgrieser/nvim-origami",
+        opts = require("custom.configs.fold").origami,
+      },
+    },
+    opts = require("custom.configs.fold").ufo,
   },
 }
 
