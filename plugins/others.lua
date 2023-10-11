@@ -51,6 +51,7 @@ local plugins = {
     event = "BufReadPre",
     config = true,
   },
+
   -- Guess indent for file
   {
     "nmac427/guess-indent.nvim",
@@ -58,6 +59,7 @@ local plugins = {
     opts = {},
   },
 
+  -- Startuptime
   {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
@@ -72,11 +74,13 @@ local plugins = {
     cmd = "UndotreeToggle",
   },
 
+  -- Zoxide: quickly switch between directories
   {
     "jvgrootveld/telescope-zoxide",
     config = true,
   },
 
+  -- Neorg
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",

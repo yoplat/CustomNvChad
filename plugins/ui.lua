@@ -21,6 +21,7 @@ local plugins = {
       end
     end,
   },
+
   -- Noice: better ui
   {
     "folke/noice.nvim",

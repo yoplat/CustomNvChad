@@ -1,5 +1,6 @@
 ---@type NvPluginSpec[]
 local plugins = {
+  -- Gitsigns
   {
     "lewis6991/gitsigns.nvim",
     dependencies = {
@@ -19,6 +20,8 @@ local plugins = {
       },
     },
   },
+
+  -- Neogit and diffview
   {
     "NeogitOrg/neogit",
     cmd = "Neogit",
