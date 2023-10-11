@@ -9,6 +9,7 @@ M.general = {
     ["<Esc>"] = { "<cmd>noh <CR>", "Clear highlights" },
     ["<leader>tt"] = { "<cmd> tabnext <cr>", "Next tab" },
     ["<leader>qt"] = { "<cmd> tabclose <cr>", "Tab close" },
+    ["<leader>cc"] = { "<cmd> cd ~/.config/nvim/lua/custom <cr>", "Custom Config" },
   },
 
   t = {
@@ -118,44 +119,6 @@ M.persistence = {
 M.undotree = {
   n = {
     ["<leader>u"] = { "<cmd> UndotreeToggle <cr>", "Undo Tree" },
-  },
-}
-
-M.ufo = {
-  n = {
-    ["zR"] = {
-      function()
-        require("ufo").openAllFolds()
-      end,
-      "Open All Folds",
-    },
-    ["zM"] = {
-      function()
-        require("ufo").closeAllFolds()
-      end,
-      "Close All Folds",
-    },
-    ["zr"] = {
-      function()
-        require("ufo").openFoldsExceptKinds()
-      end,
-      "Fold Less",
-    },
-    ["zm"] = {
-      function()
-        require("ufo").closeFoldsWith()
-      end,
-      "Fold More",
-    },
-    ["K"] = {
-      function()
-        local winid = require("ufo").peekFoldedLinesUnderCursor()
-        if not winid then
-          vim.lsp.buf.hover()
-        end
-      end,
-      "Peek Fold",
-    },
   },
 }
 

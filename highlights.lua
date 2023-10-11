@@ -27,16 +27,18 @@ M.override = {
 
 vim.api.nvim_set_hl(0, "WinBar", { cterm = nil }) -- No dropbar bold font
 
----@type HLTable
 M.add = {
-  AlphaButtons = {
-    fg = "blue",
+  SimpleDashAscii = {
+    fg = "#89b4fa",
+    bg = "NONE",
   },
-  AlphaText = {
-    fg = "teal",
+  SimpleDashButtons = {
+    fg = "#d9e0ee",
+    bg = "NONE",
   },
-  AlphaFooter = {
-    fg = "orange",
+  SimpleDashFooter = {
+    fg = "#89b4fa",
+    bg = "NONE",
   },
 }
 

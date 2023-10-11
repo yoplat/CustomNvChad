@@ -67,18 +67,9 @@ local plugins = {
   },
 
   {
-    "kevinhwang91/nvim-ufo",
-    keys = { "za", "zA", "zR", "zM", "zr", "zm" },
-    dependencies = "kevinhwang91/promise-async",
-    opts = require "custom.configs.ufo",
-  },
-
-  {
-    "goolord/alpha-nvim",
+    dir = "~/SourcesGithub/SimpleDash",
     event = "VimEnter",
-    config = function()
-      require "custom.configs.alpha"
-    end,
+    opts = require "custom.configs.simpledash",
   },
 }
 

@@ -32,9 +32,9 @@ require("statuscol").setup {
     "lazy",
     "toggleterm",
     "terminal",
+    "simple-dash",
   },
   segments = {
-    -- TODO: check when statuscolumn has updated to use extsigns
     -- Show sign column
     {
       sign = {
