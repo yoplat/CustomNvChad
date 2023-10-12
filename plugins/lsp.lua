@@ -48,6 +48,31 @@ local plugins = {
     event = { "BufWrite" },
     opts = require "custom.configs.conform",
   },
+
+  -- DAP
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      -- fancy UI for the debugger
+      {
+        "rcarriga/nvim-dap-ui",
+        config = require("custom.configs.dap").dapui,
+      },
+      -- virtual text for the debugger
+      {
+        "theHamsta/nvim-dap-virtual-text",
+        opts = {},
+      },
+      -- mason.nvim integration
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = "mason.nvim",
+        cmd = { "DapInstall", "DapUninstall" },
+        opts = require("custom.configs.dap").mason_dap,
+      },
+    },
+    config = require("custom.configs.dap").dap,
+  },
 }
 
 return plugins

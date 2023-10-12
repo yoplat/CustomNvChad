@@ -18,6 +18,7 @@ M.ui = {
     "trouble",
     "notify",
     "todo",
+    "dap",
   }, -- NOTE: check what is already enabled
 
   statusline = {

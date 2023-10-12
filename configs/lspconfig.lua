@@ -66,11 +66,25 @@ M.setup = function(_, opts)
       }
     end,
 
+    ["pyright"] = function()
+      lspconfig.pyright.setup {
+        on_attach = function(client, bufnr)
+          on_attach(client, bufnr)
+        end,
+        capabilities = capabilities,
+        settings = {
+          python = {
+            venvPath = "/Users/carlobonandrini/.pyenv/versions",
+          },
+        },
+      }
+    end,
+
     -- NOTE: Check for nvchad updates in plugins/configs/lspconfig.lua
     ["lua_ls"] = function()
       lspconfig.lua_ls.setup {
-        on_attach = M.on_attach,
-        capabilities = M.capabilities,
+        on_attach = on_attach,
+        capabilities = capabilities,
 
         settings = {
           Lua = {
