@@ -4,8 +4,6 @@ M.setup = function(_, opts)
   local on_attach = require("plugins.configs.lspconfig").on_attach
   local capabilities = require("plugins.configs.lspconfig").capabilities
 
-  local lspconfig = require "lspconfig"
-
   require("plugins.configs.lspconfig").defaults()
 
   -- List of servers to install
@@ -15,7 +13,10 @@ M.setup = function(_, opts)
 
   require("mason-lspconfig").setup {
     ensure_installed = servers,
+    automatic_installation = true,
   }
+
+  local lspconfig = require "lspconfig"
 
   -- This will setup lsp for servers you listed above
   -- And servers you install through mason UI
@@ -29,13 +30,14 @@ M.setup = function(_, opts)
           -- Add your other things here
           -- Example being format on save or something
         end,
-        capabilities = function()
+        capabilities = (function()
           capabilities.textDocument.foldingRange = {
             dynamicRegistration = false,
             lineFoldingOnly = true,
           }
           return capabilities
-        end,
+        end)(),
+        -- capabilities = capabilities,
       }
     end,
     -- custom setup for a server goes after the function above
@@ -55,7 +57,7 @@ M.setup = function(_, opts)
           --    - .clangd files
           --    - global clangd/config.yaml files
           --  Read the `--enable-config` option in `clangd --help` for more information
-          "--enable-config",
+          -- "--enable-config",
         },
         on_attach = function(client, bufnr)
           on_attach(client, bufnr)

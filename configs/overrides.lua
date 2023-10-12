@@ -15,6 +15,7 @@ M.treesitter = {
     "python",
     "regex",
     "bash",
+    "cpp",
   },
   indent = {
     enable = true,
