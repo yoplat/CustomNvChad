@@ -1,10 +1,11 @@
 local M = {}
 
 M.setup = function(_, opts)
+  dofile(vim.g.base46_cache .. "lsp")
+  require "nvchad.lsp"
+
   local on_attach = require("plugins.configs.lspconfig").on_attach
   local capabilities = require("plugins.configs.lspconfig").capabilities
-
-  require("plugins.configs.lspconfig").defaults()
 
   -- List of servers to install
   local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "bashls" }
@@ -13,7 +14,6 @@ M.setup = function(_, opts)
 
   require("mason-lspconfig").setup {
     ensure_installed = servers,
-    automatic_installation = true,
   }
 
   local lspconfig = require "lspconfig"
@@ -66,9 +66,31 @@ M.setup = function(_, opts)
       }
     end,
 
-    -- Example: disable auto configuring an LSP
-    -- Here, we disable lua_ls so we can use NvChad's default config
-    ["lua_ls"] = function() end,
+    -- NOTE: Check for nvchad updates in plugins/configs/lspconfig.lua
+    ["lua_ls"] = function()
+      lspconfig.lua_ls.setup {
+        on_attach = M.on_attach,
+        capabilities = M.capabilities,
+
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = {
+                [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+                [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+                [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
+                [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
+              },
+              maxPreload = 100000,
+              preloadFileSize = 10000,
+            },
+          },
+        },
+      }
+    end,
   }
 end
 
