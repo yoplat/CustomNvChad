@@ -16,6 +16,7 @@ M.treesitter = {
     "regex",
     "bash",
     "cpp",
+    "jsonc",
   },
   indent = {
     enable = true,

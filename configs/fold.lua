@@ -31,7 +31,7 @@ end
 M.ufo = {
   close_fold_kinds = { "imports" },
   provider_selector = function()
-    return { "treesitter", "indent" }
+    return { "lsp", "indent" }
   end,
   fold_virt_text_handler = handler,
 }
