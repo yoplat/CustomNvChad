@@ -22,6 +22,12 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
+
+  -- WhichKey
+  {
+    "folke/which-key.nvim",
+    config = overrides.whichkey,
+  },
 }
 
 return plugins

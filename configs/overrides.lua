@@ -63,4 +63,22 @@ M.telescope = {
   extensions_list = { "zoxide", "themes", "terms", "fzf" },
 }
 
+M.whichkey = function(_, opts)
+  dofile(vim.g.base46_cache .. "whichkey")
+  local wk = require "which-key"
+  wk.setup(opts)
+  wk.register {
+    ["<leader>"] = {
+      f = { name = "Find" },
+      c = { name = "Code" },
+      d = { name = "Dap" },
+      g = { name = "Git" },
+      p = { name = "Preview" },
+      q = { name = "Quit" },
+      t = { name = "Tab" },
+      w = { name = "Workspace" },
+    },
+  }
+end
+
 return M

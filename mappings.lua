@@ -10,6 +10,7 @@ M.general = {
     ["<leader>tt"] = { "<cmd> tabnext <cr>", "Next tab" },
     ["<leader>qt"] = { "<cmd> tabclose <cr>", "Tab close" },
     ["<leader>cc"] = { "<cmd> cd ~/.config/nvim/lua/custom <cr>", "Custom Config" },
+    ["<leader>fm"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
   t = {
@@ -75,6 +76,12 @@ M.lspconfig = {
       end,
       "Floating diagnostic",
     },
+    ["<leader>cr"] = {
+      function()
+        require("nvchad.renamer").open()
+      end,
+      "LSP Rename",
+    },
   },
 }
 
@@ -128,6 +135,24 @@ M.ufo = {
 M.neogit = {
   n = {
     ["<leader>gg"] = { "<cmd> Neogit <cr>", "Neogit" },
+  },
+}
+
+M.gitsigns = {
+  n = {
+    ["<leader>gr"] = {
+      function()
+        require("gitsigns").reset_hunk()
+      end,
+      "Reset hunk",
+    },
+
+    ["<leader>gp"] = {
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      "Preview hunk",
+    },
   },
 }
 
@@ -192,6 +217,14 @@ M.disabled = {
     ["<leader>gs"] = false, -- Telescope Git Status
     ["<leader>td"] = false, -- Gitsigns Toggle Deleted
     ["<leader>th"] = false, -- Telescope themes
+    ["<leader>cm"] = false, -- Telescope commits
+    ["<leader>ch"] = false, -- Cheatsheet
+    ["<leader>ma"] = false, -- Telescope bookmarks
+    ["<leader>pt"] = false, -- Telescope terminals
+    ["<leader>ra"] = false, -- Telescope terminals
+    ["<leader>ph"] = false, -- Preview hunk
+    ["<leader>rh"] = false, -- Reset hunk
+    ["<leader>D"] = false, -- LSP type definition
     ["gr"] = false, -- Use trouble instead
     ["ge"] = false, -- Go to end
   },
