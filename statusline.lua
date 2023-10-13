@@ -1,3 +1,6 @@
+local M = {}
+local fn = vim.fn
+
 local get_message = function()
   local done = false
   for _, client in ipairs(vim.lsp.get_clients()) do
@@ -19,9 +22,7 @@ local get_message = function()
   return nil
 end
 
-local override = function(modules)
-  table.remove(modules, 10) -- Remove UTF-8
-
+M.statusline = function(modules)
   modules[6] = (function() -- LSP progress messages
     local status = get_message()
 
@@ -50,7 +51,7 @@ local override = function(modules)
     return vim.o.columns > 140 and "%#StText# %l, %c  " or ""
   end)()
 
-  modules[11] = (function() -- LSP servers
+  modules[12] = (function() -- LSP servers
     local lsp_status = ""
     for _, client in ipairs(vim.lsp.get_clients()) do
       if client.attached_buffers[vim.api.nvim_get_current_buf()] then
@@ -61,6 +62,30 @@ local override = function(modules)
         and ((vim.o.columns > 100 and "%#St_LspStatus# 󰄭  [" .. lsp_status:sub(0, #lsp_status - 1) .. "] ") or "%#St_LspStatus# 󰄭  LSP  ")
       or ""
   end)()
+
+  table.remove(modules, 10) -- Remove UTF-8
+  table.remove(modules, 8)
 end
 
-return override
+local tablist = function()
+  local result, number_of_tabs = "", fn.tabpagenr "$"
+
+  if number_of_tabs > 1 then
+    for i = 1, number_of_tabs, 1 do
+      local tab_hl = ((i == fn.tabpagenr()) and "%#TbLineTabOn# ") or "%#TbLineTabOff# "
+      result = result .. ("%" .. i .. "@TbGotoTab@" .. tab_hl .. i .. " ")
+      result = (i == fn.tabpagenr() and result .. "%#TbLineTabCloseBtn#" .. "%@TbTabClose@󰅙 %X") or result
+    end
+
+    return result
+  end
+
+  return ""
+end
+
+M.tabufline = function(modules)
+  table.remove(modules, #modules)
+  modules[3] = tablist()
+end
+
+return M

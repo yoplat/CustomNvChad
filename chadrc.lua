@@ -23,14 +23,12 @@ M.ui = {
 
   statusline = {
     theme = "vscode_colored",
-    overriden_modules = require "custom.statusline",
+    overriden_modules = require("custom.statusline").statusline,
   },
 
   tabufline = {
     enabled = true,
-    overriden_modules = function(modules)
-      table.remove(modules, #modules) -- remove close button and theme switch
-    end,
+    overriden_modules = require("custom.statusline").tabufline,
   },
 
   lsp = {
