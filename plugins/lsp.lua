@@ -2,7 +2,6 @@
 local plugins = {
   -- TODO: checkout action-preview.nvim/codeactionmenu
   -- TODO: checkout lspsaga
-  -- TODO: checkout stevearc/overseer.nvim
   -- TODO: checkout neogen
   -- TODO: checkout refactoring.nvim
   -- TODO: checkout compiler.nvim
@@ -44,7 +43,7 @@ local plugins = {
     },
   },
 
-  -- formatting
+  -- Conform: formatting
   {
     "stevearc/conform.nvim",
     event = { "BufWrite" },
@@ -79,6 +78,15 @@ local plugins = {
       },
     },
     config = require("custom.configs.dap").dap,
+  },
+
+  -- Overseer: task runner
+  {
+    "stevearc/overseer.nvim",
+    cmd = { "OverseerRun", "OverseerToggle" },
+    opts = {
+      templates = { "builtin", "user.run_script" },
+    },
   },
 }
 

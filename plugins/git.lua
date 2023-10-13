@@ -3,12 +3,6 @@ local plugins = {
   -- Gitsigns
   {
     "lewis6991/gitsigns.nvim",
-    dependencies = {
-      {
-        "sindrets/diffview.nvim",
-        config = true,
-      },
-    },
     opts = {
       signs = {
         add = { text = "│" },

@@ -13,6 +13,10 @@ M.general = {
     ["<leader>fm"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
+  v = {
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+  },
+
   t = {
     ["<C-h>"] = { "<C-\\><C-N><C-w>h", "Window Left" },
     -- ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Window Right" }, -- Not enabled to clear the screen
