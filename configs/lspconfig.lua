@@ -8,7 +8,7 @@ M.setup = function(_, opts)
   local capabilities = require("plugins.configs.lspconfig").capabilities
 
   -- List of servers to install
-  local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "bashls" }
+  local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "bashls", "lua_ls" }
 
   require("mason").setup(opts)
 

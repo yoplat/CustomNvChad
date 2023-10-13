@@ -88,6 +88,15 @@ local plugins = {
       templates = { "builtin", "user.run_script" },
     },
   },
+
+  {
+    "jackMort/ChatGPT.nvim",
+    cmd = { "ChatGPT" },
+    config = require "custom.configs.chat",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 }
 
 return plugins
