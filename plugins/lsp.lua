@@ -5,6 +5,7 @@ local plugins = {
   -- TODO: checkout stevearc/overseer.nvim
   -- TODO: checkout neogen
   -- TODO: checkout refactoring.nvim
+  -- TODO: checkout compiler.nvim
 
   -- Completition framework
   {
@@ -73,7 +74,7 @@ local plugins = {
       },
       {
         "anuvyklack/hydra.nvim",
-        event = "LspAttach",
+        keys = { "<A-d>" },
         config = require("custom.configs.dap").hydra,
       },
     },
