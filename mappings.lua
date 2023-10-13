@@ -158,7 +158,7 @@ M.gitsigns = {
 
 M.persistence = {
   n = {
-    ["<leader>qr"] = { [[<cmd>lua require("persistence").load({ last = true })<cr>]], "Load Last Session" },
+    ["<leader>qr"] = { [[<cmd>lua require("persistence").load()<cr>]], "Load Session" },
   },
 }
 

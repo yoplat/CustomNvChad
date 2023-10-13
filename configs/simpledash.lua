@@ -38,7 +38,7 @@ return {
     { "  Recent Files", "Spc f r", "Telescope oldfiles" },
     { "  Find Word", "Spc f w", "Telescope live_grep" },
     { "  Config", "Spc c c", "<cmd> cd ~/.config/nvim/lua/custom <CR>" },
-    { "  Restore Session", "Spc q r", [[<cmd>lua require("persistence").load({ last = true })<cr>]] },
+    { "  Restore Session", "Spc q r", [[<cmd>lua require("persistence").load()<cr>]] },
     { "  Git status", "Spc g g", "<cmd> Neogit <cr>" },
     { "󰒲  Lazy", "Spc l", "<cmd> Lazy <CR>" },
     { "  Quit", "Spc q q", "<cmd> qa <CR>" },

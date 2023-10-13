@@ -2,8 +2,9 @@
 local plugins = {
   -- TODO: checkout action-preview.nvim/codeactionmenu
   -- TODO: checkout lspsaga
-  -- TODO: checkout nvim-dap
   -- TODO: checkout stevearc/overseer.nvim
+  -- TODO: checkout neogen
+  -- TODO: checkout refactoring.nvim
 
   -- Completition framework
   {
@@ -69,6 +70,11 @@ local plugins = {
         dependencies = "mason.nvim",
         cmd = { "DapInstall", "DapUninstall" },
         opts = require("custom.configs.dap").mason_dap,
+      },
+      {
+        "anuvyklack/hydra.nvim",
+        event = "LspAttach",
+        config = require("custom.configs.dap").hydra,
       },
     },
     config = require("custom.configs.dap").dap,
