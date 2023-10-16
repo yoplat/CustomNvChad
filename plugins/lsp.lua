@@ -50,6 +50,13 @@ local plugins = {
     opts = require "custom.configs.conform",
   },
 
+  -- Nvim-lint: linting
+  {
+    "mfussenegger/nvim-lint",
+    event = "LspAttach",
+    config = require "custom.configs.lint",
+  },
+
   -- DAP
   {
     "mfussenegger/nvim-dap",
@@ -84,11 +91,16 @@ local plugins = {
   {
     "stevearc/overseer.nvim",
     cmd = { "OverseerRun", "OverseerToggle" },
-    opts = {
-      templates = { "builtin", "user.run_script" },
-    },
+    config = function(_, opts)
+      local overseer = require "overseer"
+      overseer.setup(opts)
+      overseer.register_template {
+        require "custom.overseer.template.user.run_script",
+      }
+    end,
   },
 
+  -- ChatGPT
   {
     "jackMort/ChatGPT.nvim",
     cmd = { "ChatGPT" },
