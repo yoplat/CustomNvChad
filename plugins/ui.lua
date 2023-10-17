@@ -93,6 +93,7 @@ local plugins = {
   -- Hydra: windows
   {
     "sindrets/winshift.nvim",
+    cmd = { "WinShift" },
     dependencies = {
       "mrjones2014/smart-splits.nvim",
       "anuvyklack/hydra.nvim",
