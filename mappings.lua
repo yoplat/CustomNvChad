@@ -172,32 +172,20 @@ M.undotree = {
   },
 }
 
-M.dap = {
-  -- stylua: ignore
+M.hydra = {
   n = {
-    ["<leader>du"] = { function() require("dapui").toggle({ }) end, "Dap UI" },
-    ["<leader>de"] = { function() require("dapui").eval() end, "Eval" },
-    ["<leader>dB"] = { function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "Breakpoint Condition" },
-    ["<leader>db"] = { function() require("dap").toggle_breakpoint() end, "Toggle Breakpoint" },
-    ["<leader>dc"] = { function() require("dap").continue() end, "Continue" },
-    ["<leader>dC"] = { function() require("dap").run_to_cursor() end, "Run to Cursor" },
-    ["<leader>dg"] = { function() require("dap").goto_() end, "Go to line (no execute)" },
-    ["<leader>di"] = { function() require("dap").step_into() end, "Step Into" },
-    ["<leader>dj"] = { function() require("dap").down() end, "Down" },
-    ["<leader>dk"] = { function() require("dap").up() end, "Up" },
-    ["<leader>dl"] = { function() require("dap").run_last() end, "Run Last" },
-    ["<leader>do"] = { function() require("dap").step_out() end, "Step Out" },
-    ["<leader>dO"] = { function() require("dap").step_over() end,"Step Over" },
-    ["<leader>dp"] = { function() require("dap").pause() end, "Pause" },
-    ["<leader>dr"] = { function() require("dap").repl.toggle() end, "Toggle REPL" },
-    ["<leader>ds"] = { function() require("dap").session() end, "Session" },
-    ["<leader>dt"] = { function() require("dap").terminate() end, "Terminate" },
-    ["<leader>dw"] = { function() require("dap.ui.widgets").hover() end, "Widgets" },
-  },
-
-  -- stylua: ignore
-  v = {
-    ["<leader>de"] = { function() require("dapui").eval() end, "Eval" },
+    ["<A-w>"] = {
+      function()
+        require("custom.configs.hydra").window()
+      end,
+      "Window Shift",
+    },
+    ["<A-d>"] = {
+      function()
+        require("custom.configs.hydra").dap()
+      end,
+      "Dap Hydra",
+    },
   },
 }
 

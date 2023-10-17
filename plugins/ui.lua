@@ -89,6 +89,15 @@ local plugins = {
     },
     opts = require("custom.configs.fold").ufo,
   },
+
+  -- Hydra: windows
+  {
+    "sindrets/winshift.nvim",
+    dependencies = {
+      "mrjones2014/smart-splits.nvim",
+      "anuvyklack/hydra.nvim",
+    },
+  },
 }
 
 return plugins

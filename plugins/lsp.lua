@@ -78,11 +78,6 @@ local plugins = {
         cmd = { "DapInstall", "DapUninstall" },
         opts = require("custom.configs.dap").mason_dap,
       },
-      {
-        "anuvyklack/hydra.nvim",
-        keys = { "<A-d>" },
-        config = require("custom.configs.dap").hydra,
-      },
     },
     config = require("custom.configs.dap").dap,
   },
