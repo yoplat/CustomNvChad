@@ -1,6 +1,4 @@
-local M = {}
-
-M.setup = function(_, opts)
+return function(_, opts)
   dofile(vim.g.base46_cache .. "lsp")
   dofile(vim.g.base46_cache .. "mason")
   require "nvchad.lsp"
@@ -114,65 +112,3 @@ M.setup = function(_, opts)
     end,
   }
 end
-
-M.setup_opts = function()
-  local opts = {
-    diagnostics = {
-      underline = true,
-      update_in_insert = false,
-      virtual_text = {
-        spacing = 5,
-        -- only show sources name if multiple available
-        -- source = "if_many",
-        -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-        -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-        -- See function below
-        -- prefix = "icons",
-      },
-      -- Show error -> warning -> info
-      severity_sort = true,
-    },
-    -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
-    -- Be aware that you also will need to properly configure your LSP server to
-    -- provide the inlay hints.
-    inlay_hints = {
-      enabled = false,
-    },
-  }
-
-  -- Use inlay hints if opts.inlay_hints.enabled = true
-  local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
-  if opts.inlay_hints.enabled and inlay_hint then
-    vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function(args)
-        local buffer = args.buf
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if client and client.supports_method "textDocument/inlayHint" then
-          inlay_hint(buffer, true)
-        end
-      end,
-    })
-  end
-
-  -- If virtual_text.prefix = "icons" put diagnostic icons
-  if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
-    opts.diagnostics.virtual_text.prefix = function(diagnostic)
-      local icons = {
-        Error = "󰅙 ",
-        Warn = " ",
-        Hint = "󰌵 ",
-        Info = "󰋼 ",
-      }
-      for d, icon in pairs(icons) do
-        if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
-          return icon
-        end
-      end
-    end
-  end
-
-  -- Merge diagnostics opts into vim
-  vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
-end
-
-return M
