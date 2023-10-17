@@ -2,15 +2,36 @@ local M = {}
 
 M.setup = function(_, opts)
   dofile(vim.g.base46_cache .. "lsp")
+  dofile(vim.g.base46_cache .. "mason")
   require "nvchad.lsp"
 
   local on_attach = require("plugins.configs.lspconfig").on_attach
   local capabilities = require("plugins.configs.lspconfig").capabilities
 
   -- List of servers to install
-  local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "bashls", "lua_ls" }
+  local servers = {
+    "html",
+    "cssls",
+    "tsserver",
+    "clangd",
+    "pyright",
+    "bashls",
+    "lua_ls",
+  }
+
+  -- List of tools to install (no servers)
+  local ensure_installed = {
+    "ruff",
+    "black",
+    "stylua",
+    "debugpy",
+  }
 
   require("mason").setup(opts)
+
+  vim.api.nvim_create_user_command("MasonInstallAll", function()
+    vim.cmd("MasonInstall " .. table.concat(ensure_installed, " "))
+  end, {})
 
   require("mason-lspconfig").setup {
     ensure_installed = servers,

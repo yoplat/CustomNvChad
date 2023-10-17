@@ -43,18 +43,11 @@ local plugins = {
     },
   },
 
-  -- Conform: formatting
+  -- None-ls: linting and formatting
   {
-    "stevearc/conform.nvim",
-    event = { "BufWrite" },
-    opts = require "custom.configs.conform",
-  },
-
-  -- Nvim-lint: linting
-  {
-    "mfussenegger/nvim-lint",
+    "nvimtools/none-ls.nvim",
     event = "LspAttach",
-    config = require "custom.configs.lint",
+    config = require "custom.configs.null",
   },
 
   -- DAP
