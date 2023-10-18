@@ -4,9 +4,12 @@ return function()
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
   null_ls.setup {
     sources = {
+      -- null_ls.builtins.code_actions.refactoring,
       null_ls.builtins.formatting.stylua,
-      null_ls.builtins.formatting.black,
-      null_ls.builtins.diagnostics.ruff,
+      -- Python
+      null_ls.builtins.formatting.usort, -- organize imports
+      null_ls.builtins.formatting.black, -- formatter
+      null_ls.builtins.diagnostics.ruff, -- linter
     },
 
     on_attach = function(client, bufnr)

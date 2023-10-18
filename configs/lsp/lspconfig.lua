@@ -21,6 +21,7 @@ return function(_, opts)
   local ensure_installed = {
     "ruff",
     "black",
+    "usort",
     "stylua",
     "debugpy",
   }
