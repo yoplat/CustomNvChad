@@ -9,7 +9,6 @@ M.general = {
     ["<Esc>"] = { "<cmd>noh <CR>", "Clear highlights" },
     ["<leader>tt"] = { "<cmd> tabnext <cr>", "Next tab" },
     ["<leader>qt"] = { "<cmd> tabclose <cr>", "Tab close" },
-    ["<leader>cc"] = { "<cmd> cd ~/.config/nvim/lua/custom <cr>", "Custom Config" },
     ["<leader>fm"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
@@ -54,7 +53,6 @@ M.telescope = {
     ["<leader>fr"] = { "<cmd> Telescope oldfiles <cr>", "Recent Files" },
     ["<leader>fl"] = { "<cmd> Telescope highlights <cr>", "Find Highlights" },
     ["<leader>fk"] = { "<cmd> Telescope keymaps <cr>", "Find Keymaps" },
-    ["<leader>fs"] = { "<cmd> Telescope persisted <cr>", "Find Sessions" },
     ["<leader>ft"] = { "<cmd> Telescope themes <cr>", "Find Themes" },
     ["<leader>fp"] = { "<cmd> Telescope zoxide list <cr>", "Find Projects" },
   },
@@ -189,6 +187,13 @@ M.hydra = {
   },
 }
 
+M.compiler = {
+  n = {
+    ["<leader>cc"] = { "<cmd> CompilerOpen <cr>", "Compile/Run" },
+    ["<leader>ct"] = { "<cmd> CompilerToggleResults <cr>", "Compiler Toggle" },
+  },
+}
+
 M.disabled = {
   n = {
     ["<leader>fo"] = false, -- Telescope oldfiles
@@ -216,6 +221,7 @@ M.disabled = {
     ["<leader>ra"] = false, -- Telescope terminals
     ["<leader>ph"] = false, -- Preview hunk
     ["<leader>rh"] = false, -- Reset hunk
+    ["<leader>lf"] = false, -- Floating diagnostics
     ["<leader>D"] = false, -- LSP type definition
     ["gr"] = false, -- Use trouble instead
     ["ge"] = false, -- Go to end

@@ -46,7 +46,7 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     event = "LspAttach",
-    config = require "custom.configs.null",
+    config = require "custom.configs.lsp.null",
   },
 
   -- DAP
@@ -74,17 +74,25 @@ local plugins = {
     config = require("custom.configs.dap").dap,
   },
 
+  {
+    "Zeioth/compiler.nvim",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    dependencies = { "stevearc/overseer.nvim" },
+    opts = {},
+  },
   -- Overseer: task runner
   {
     "stevearc/overseer.nvim",
     cmd = { "OverseerRun", "OverseerToggle" },
-    config = function(_, opts)
-      local overseer = require "overseer"
-      overseer.setup(opts)
-      overseer.register_template {
-        require "custom.overseer.template.user.run_script",
-      }
-    end,
+    opts = {
+      templates = { "builtin" },
+      -- task_list = {
+      --   direction = "bottom",
+      --   min_height = 25,
+      --   max_height = 25,
+      --   default_detail = 1,
+      -- },
+    },
   },
 
   -- ChatGPT

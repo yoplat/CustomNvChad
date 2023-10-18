@@ -14,6 +14,7 @@ opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs
 opt.foldcolumn = "0" -- Enable fold column
 opt.foldlevel = 99
+opt.foldlevelstart = 99
 opt.foldenable = true
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
@@ -43,7 +44,7 @@ opt.shortmess:append {
 }
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 0 -- Columns of context
-opt.signcolumn = "no" -- Always show the signcolumn, otherwise it would shift the text each time
+opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 opt.splitkeep = "screen"
 opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
