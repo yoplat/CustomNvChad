@@ -225,6 +225,7 @@ M.disabled = {
     ["<leader>D"] = false, -- LSP type definition
     ["gr"] = false, -- Use trouble instead
     ["ge"] = false, -- Go to end
+    ["<C-c>"] = false, -- Copy whole file
   },
   i = {
     ["<Tab>"] = false, -- Next buffer

@@ -4,7 +4,6 @@ local plugins = {
   -- TODO: checkout lspsaga
   -- TODO: checkout neogen
   -- TODO: checkout refactoring.nvim
-  -- TODO: checkout compiler.nvim
 
   -- Completition framework
   {
@@ -74,25 +73,32 @@ local plugins = {
     config = require("custom.configs.dap").dap,
   },
 
+  -- Compiler/Overseer: task runner
   {
     "Zeioth/compiler.nvim",
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-    dependencies = { "stevearc/overseer.nvim" },
+    dependencies = {
+      {
+        "stevearc/overseer.nvim",
+        cmd = { "OverseerRun", "OverseerToggle" },
+        opts = {
+          templates = { "builtin" },
+        },
+      },
+    },
     opts = {},
   },
-  -- Overseer: task runner
+
+  -- Vim-slime: Small utility to send code to a running REPL
   {
-    "stevearc/overseer.nvim",
-    cmd = { "OverseerRun", "OverseerToggle" },
-    opts = {
-      templates = { "builtin" },
-      -- task_list = {
-      --   direction = "bottom",
-      --   min_height = 25,
-      --   max_height = 25,
-      --   default_detail = 1,
-      -- },
-    },
+    -- <C-c> to send current line or selection
+    -- <C-v> to set correct jobid (echo &channel)
+    "jpalardy/vim-slime",
+    keys = { "<C-c>" },
+    config = function()
+      vim.g.slime_target = "neovim"
+      vim.g.slime_default_config = { jobid = 3 }
+    end,
   },
 
   -- ChatGPT
