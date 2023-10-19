@@ -10,7 +10,7 @@ M.override = {
     italic = true,
   },
   CursorLine = {
-    bg = "lightbg",
+    bg = "#222131",
   },
   PmenuSbar = {
     bg = "NONE",

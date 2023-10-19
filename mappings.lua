@@ -194,6 +194,27 @@ M.compiler = {
   },
 }
 
+-- stylua: ignore
+M.flash = {
+  n = {
+    ["s"] = { function() require("flash").jump() end, "Flash" },
+    ["S"] = { function() require("flash").treesitter() end, "Flash Treesitter" },
+  },
+
+  x = {
+    ["s"] = { function() require("flash").jump() end, "Flash" },
+    ["S"] = { function() require("flash").treesitter() end, "Flash Treesitter" },
+    ["R"] = { function() require("flash").treesitter_search() end, "Treesitter Search" },
+  },
+
+  o = {
+    ["s"] = { function() require("flash").jump() end, "Flash" },
+    ["S"] = { function() require("flash").treesitter() end, "Flash Treesitter" },
+    ["r"] = { function() require("flash").remote() end, "Remote Flash" },
+    ["R"] = { function() require("flash").treesitter_search() end, "Treesitter Search" },
+  },
+}
+
 M.disabled = {
   n = {
     ["<leader>fo"] = false, -- Telescope oldfiles

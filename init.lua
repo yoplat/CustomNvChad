@@ -65,7 +65,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("TermOpen", {
   group = augroup "statusline_terminal",
   callback = function(event)
-    vim.cmd [[setlocal listchars= nonumber norelativenumber cursorline nocul]]
+    vim.cmd [[setlocal listchars= nonumber norelativenumber nocul]]
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
   end,
 })

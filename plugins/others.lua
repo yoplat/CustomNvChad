@@ -80,6 +80,12 @@ local plugins = {
     config = true,
   },
 
+  {
+    "folke/flash.nvim",
+    event = "BufRead",
+    config = require "custom.configs.flash",
+  },
+
   -- Neorg
   {
     "nvim-neorg/neorg",
