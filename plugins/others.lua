@@ -3,7 +3,6 @@ local plugins = {
 
   -- TODO: checkout flatten.nvim
   -- TODO: checkout spectre.nvim
-  -- TODO: checkout flash.nvim
 
   -- Highlight current word and references
   {
@@ -80,6 +79,7 @@ local plugins = {
     config = true,
   },
 
+  -- Flash: faster movements
   {
     "folke/flash.nvim",
     event = "BufRead",
