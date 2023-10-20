@@ -1,4 +1,10 @@
-return function(_, opts)
+return function()
   local flash = require "flash"
-  flash.setup(opts)
+  flash.setup {
+    modes = {
+      char = {
+        keys = { "f", "F", "t", "T" },
+      },
+    },
+  }
 end

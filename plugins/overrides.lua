@@ -28,6 +28,19 @@ local plugins = {
     "folke/which-key.nvim",
     config = overrides.whichkey,
   },
+
+  {
+    "nvim-tree/nvim-web-devicons",
+    opts = {
+      override = {
+        norg = {
+          icon = "",
+          color = "#4878be",
+          name = "neorg",
+        },
+      },
+    },
+  },
 }
 
 return plugins

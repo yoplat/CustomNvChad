@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
@@ -48,7 +48,6 @@ opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift t
 opt.splitkeep = "screen"
 opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
-opt.smoothscroll = true
 opt.spelllang = { "en" }
 opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current

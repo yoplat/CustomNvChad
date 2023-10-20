@@ -215,6 +215,12 @@ M.flash = {
   },
 }
 
+M.neorg = {
+  n = {
+    ["<leader>n"] = { "<cmd> Neorg index <cr>", "Neorg index" },
+  },
+}
+
 M.disabled = {
   n = {
     ["<leader>fo"] = false, -- Telescope oldfiles
